@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Desktop Pet</title>
+    <link rel="stylesheet" href="styles.css?v=4" />
+  </head>
+  <body>
+    <script>
+      if (new URLSearchParams(window.location.search).get("desktop") === "1") {
+        document.body.classList.add("desktop-mode");
+      }
+    </script>
+    <main class="desktop" aria-label="桌面宠物演示">
+      <button class="window-close" id="closeButton" type="button" aria-label="关闭桌宠">×</button>
+      <section class="status-panel" aria-label="宠物状态">
+        <div>
+          <p class="eyebrow">AI PET</p>
+          <h1>小灵</h1>
+        </div>
+        <div class="meter">
+          <span>心情</span>
+          <strong id="moodValue">84</strong>
+        </div>
+        <div class="meter">
+          <span>能量</span>
+          <strong id="energyValue">76</strong>
+        </div>
+        <div class="thought" id="thought">我在等你摸摸头。</div>
+      </section>
+
+      <section class="pet-stage" aria-label="宠物活动区域">
+        <div class="desk-line"></div>
+        <button class="pet" id="pet" type="button" aria-label="和小灵互动">
+          <span class="pet-shadow"></span>
+          <span class="ear ear-left"></span>
+          <span class="ear ear-right"></span>
+          <span class="body">
+            <span class="face">
+              <span class="eye eye-left"></span>
+              <span class="eye eye-right"></span>
+              <span class="blush blush-left"></span>
+              <span class="blush blush-right"></span>
+              <span class="mouth"></span>
+            </span>
+            <span class="belly"></span>
+            <span class="paw paw-left"></span>
+            <span class="paw paw-right"></span>
+          </span>
+          <span class="tail"></span>
+          <span class="custom-pet-image" id="customPetImage"></span>
+          <video class="pet-video" id="petVideo" muted playsinline preload="auto"></video>
+          <canvas class="pet-video-canvas" id="petVideoCanvas" aria-hidden="true"></canvas>
+          <span class="bubble" id="bubble">嗨</span>
+        </button>
+      </section>
+
+      <nav class="actions" aria-label="互动按钮">
+        <button type="button" data-action="cute">卖萌</button>
+        <button type="button" data-action="walk">走路</button>
+        <button type="button" data-action="upload-image">上传形象</button>
+        <button type="button" data-action="reset-image">恢复默认</button>
+      </nav>
+      <input class="image-input" id="petImageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" />
+    </main>
+
+    <script src="app.js?v=4"></script>
+  </body>
+</html>

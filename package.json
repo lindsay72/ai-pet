@@ -1,0 +1,16 @@
+{
+  "name": "ai-desktop-pet",
+  "version": "0.1.0",
+  "description": "A tiny AI desktop pet prototype.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:win": "node ./node_modules/electron/cli.js .",
+    "smoke": "electron . --smoke-test",
+    "smoke:win": "node ./node_modules/electron/cli.js . --smoke-test",
+    "web": "python3 -m http.server 5173"
+  },
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}
