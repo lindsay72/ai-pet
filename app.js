@@ -439,7 +439,7 @@ closeButton.addEventListener("click", (event) => {
   if (desktopPet) {
     desktopPet.close();
   } else {
-    window.close();
+    document.querySelector(".desktop").hidden = true;
   }
 });
 document.addEventListener("pointerup", endDrag);

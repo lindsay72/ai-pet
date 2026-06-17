@@ -72,9 +72,9 @@ button {
 }
 
 .window-close {
-  position: fixed;
-  top: 14px;
-  right: 14px;
+  position: absolute;
+  left: calc(50vw + 64px);
+  bottom: 264px;
   z-index: 6;
   display: grid;
   width: 32px;
@@ -100,8 +100,8 @@ button {
 }
 
 .desktop-mode .window-close {
-  top: 8px;
-  right: 8px;
+  left: calc(50vw + 58px);
+  bottom: 244px;
   width: 26px;
   height: 26px;
   font-size: 18px;
@@ -248,6 +248,18 @@ button {
 .desktop-mode.video-pet .pet {
   left: calc(50vw - 80px);
   bottom: 22px;
+}
+
+.custom-pet .window-close,
+.video-pet .window-close {
+  left: calc(50vw + 56px);
+  bottom: 236px;
+}
+
+.desktop-mode.custom-pet .window-close,
+.desktop-mode.video-pet .window-close {
+  left: calc(50vw + 50px);
+  bottom: 172px;
 }
 
 .pet:active {
@@ -836,4 +848,10 @@ body.desktop-mode.custom-pet .pet,
 body.desktop-mode.video-pet .pet {
   left: calc(50vw - 80px);
   bottom: 22px;
+}
+
+body.desktop-mode.custom-pet .window-close,
+body.desktop-mode.video-pet .window-close {
+  left: calc(50vw + 50px);
+  bottom: 172px;
 }
